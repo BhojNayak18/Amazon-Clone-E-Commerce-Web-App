@@ -86,6 +86,9 @@ async function loadPage() {
             const {productId} = buyAgainButton.dataset;
             addToCart(productId, 1);
 
+            const cartQuantityElement = document.querySelector('.js-cart-quantity');
+            cartQuantityElement.textContent = calculateCartQuantity();
+            
             buyAgainButton.innerHTML = 'Added';
             setTimeout(() => {
                 buyAgainButton.innerHTML = `
